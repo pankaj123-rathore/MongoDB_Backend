@@ -6,7 +6,8 @@ import cors from "cors";
 import userRouter from "./routes/user.route.js";
 import productRouter from "./routes/product.route.js";
 import categoryRouter from "./routes/category.route.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
@@ -19,7 +20,7 @@ mongoose.connect(process.env.DB_URL)
     app.use("/user",userRouter);
     app.use("/product",productRouter);
     app.use("/category",categoryRouter);
-    app.listen(3000,()=>{
+    app.listen(process.env.PORT,()=>{
         console.log("Server started...");
     })
 }).catch(err=>{
