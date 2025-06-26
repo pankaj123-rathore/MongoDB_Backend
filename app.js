@@ -24,6 +24,5 @@ mongoose.connect(process.env.DB_URL)
         console.log("Server started...");
     })
 }).catch(err=>{
-    console.log(err);
-    return response.status(500).json({error:"Database Connection failed.."});
+    console.log("Database Connection failed..");
 });
