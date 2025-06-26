@@ -24,5 +24,6 @@ mongoose.connect(process.env.DB_URL)
         console.log("Server started...");
     })
 }).catch(err=>{
+    console.log(err);
     console.log("Database Connection failed..");
 });
